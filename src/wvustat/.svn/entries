@@ -1,0 +1,85 @@
+10
+
+dir
+791
+svn+ssh://dajieluo@svn.stat.wvu.edu/www/repos/stat/trunk/JavaStat/myJavaStat/src/wvustat
+svn+ssh://dajieluo@svn.stat.wvu.edu/www/repos/stat
+
+
+
+2012-03-26T20:15:57.029946Z
+568
+dajieluo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+351ec4b2-fdd5-4e14-980d-f2db10344570
+
+interfaces
+dir
+
+simulation
+dir
+
+swing
+dir
+
+contdist
+dir
+
+table
+dir
+
+network
+dir
+
+math
+dir
+
+statistics
+dir
+
+contentviewer
+dir
+
+launcher
+dir
+
+dist
+dir
+
+awtTable
+dir
+
+images
+dir
+
+modules
+dir
+
+xmldocviewer
+dir
+
+data
+dir
+
+plotUtil
+dir
+
+util
+dir
+
+plot
+dir
+

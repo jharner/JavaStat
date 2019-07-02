@@ -1,0 +1,143 @@
+<project name="javastat" default="compile" basedir=".">
+  <property name="src" value="src"/>
+  <property name="dest" value="build"/>
+  <property name="doc" value="doc"/>
+  <property name="lib" value="lib"/>
+
+  <path id="compile.classpath">
+    <fileset dir="${lib}/xerces-2_4_0">
+      <include name="*.jar"/>
+    </fileset>
+    <pathelement location="${lib}/jama-1.0.1.jar"/>
+    <pathelement location="${lib}/trove.jar"/>
+    <pathelement location="${lib}/jlfgr.jar"/>
+    <pathelement location="${lib}/forms-1.0.4.jar"/>
+  	<pathelement location="${lib}/JRI.jar"/>
+  	<pathelement location="${lib}/JDirectoryDialog.jar"/>
+  </path>
+
+  <target name="init">
+    <mkdir dir="${dest}"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <javac srcdir="${src}" destdir="${dest}">
+      <classpath refid="compile.classpath"/>
+    </javac>
+  	<rmic includes="wvustat/network/server/JRIServerImpl.class, 
+  		            wvustat/network/server/AsyncJRIServerImpl.class" base="${dest}">
+  		<classpath path="${dest}"/>
+  	</rmic>
+    <copy todir="${dest}">
+      <fileset dir="${src}" 
+               excludes="**/*.java"/>
+    </copy>
+  	<copy todir="bin">
+  	      <fileset dir="${dest}" 
+  	               includes="wvustat/network/server/**"/>
+  	</copy>
+  </target>
+
+  <target name="myJavaStat_pkg" depends="compile">
+    <jar basedir="${dest}" destfile="myJavaStat_cvs.jar"
+         excludes="**/wvustat/network/server/JRIServerImpl.class, 
+    	           **/wvustat/network/server/JRIServerImpl_Skel.class,
+    	           **/wvustat/network/server/AsyncJRIServerImpl.class, 
+    	    	   **/wvustat/network/server/AsyncJRIServerImpl_Skel.class,
+    			   contents/**">
+      <manifest>
+        <attribute name="Main-Class" value="wvustat.launcher.XLauncher"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="server_pkg" depends="compile">
+    <jar basedir="${dest}" destfile="JRIServer.jar"
+         includes="wvustat/network/*, wvustat/network/server/**" />
+  </target>
+
+  <target name="run" depends="compile">
+    <java fork="true" failonerror="true" 
+          classname="wvustat.launcher.XLauncher">
+      <classpath>
+        <pathelement path="${dest}" />
+        <path refid="compile.classpath" />
+      </classpath>
+    </java>
+  </target>
+
+  <target name="clean">
+    <delete dir="${dest}"/>
+  </target>
+
+  <target name="SampleApplet" depends="compile">
+    <jar basedir="${dest}" destfile="Sample.jar"
+         includes="wvustat/simulation/sampling/**" />
+  </target>
+  
+  <target name="DiscreteDistApplet" depends="compile">
+    <jar basedir="${dest}" destfile="DiscreteDist.jar"
+         includes="wvustat/simulation/discretedist/**" />
+  </target>
+  
+  <target name="ContinuousDistApplet" depends="compile">
+    <jar basedir="${dest}" destfile="ContinuousDist.jar"
+         includes="wvustat/simulation/continuousdist/**" />
+  </target>
+
+  <target name="CentralLimitApplet" depends="compile">
+    <jar basedir="${dest}" destfile="CentralLimit.jar"
+         includes="wvustat/simulation/centrallimit/**" />
+  </target>
+
+  <target name="PowerApplet" depends="compile">
+    <jar basedir="${dest}" destfile="Power.jar"
+         includes="wvustat/simulation/power/**" />
+  </target>
+  
+  <target name="ConfIntApplet" depends="compile">
+    <jar basedir="${dest}" destfile="ConfInt.jar"
+         includes="wvustat/simulation/confint/**" />
+  </target>
+
+  <target name="FiveStepApplet" depends="compile">
+    <jar basedir="${dest}" destfile="FiveStep.jar"
+         includes="wvustat/data/**, wvustat/dist/**, wvustat/interfaces/**,
+                   wvustat/modules/BaseAxisModel*, wvustat/modules/GroupMaker*,
+    			   wvustat/modules/EqualCountGrouper*, wvustat/modules/Transformation*,
+    			   wvustat/plot/**, wvustat/plotUtil/**,
+                   wvustat/simulation/fivestep/**,
+                   wvustat/simulation/model/**, wvustat/statistics/**,
+                   wvustat/swing/**, wvustat/swing/table/**,
+                   wvustat/table/**, wvustat/util/**" />
+  </target>
+
+  <target name="PlotsApplet" depends="compile">
+  	<jar basedir="${dest}" destfile="myDataPlots.jar"
+  	     includes="wvustat/data/**, wvustat/dist/**, wvustat/interfaces/**,
+        		   wvustat/math/expression/**, wvustat/modules/*, 
+  				   wvustat/modules/ControlChart/*, wvustat/modules/logistic/*,
+                   wvustat/plot/**, wvustat/statistics/**,  
+                   wvustat/swing/**, wvustat/table/**, wvustat/network/CallbackRemote*,
+                   wvustat/util/DatasetFactory*, wvustat/util/MathUtils* " />
+  </target>
+	
+  <target name="DataModule" depends="compile">
+    <jar basedir="${dest}" destfile="DataModule.jar"
+    	     includes="wvustat/data/**, wvustat/dist/**, wvustat/interfaces/**,
+    	        	   wvustat/math/expression/**, wvustat/modules/**,
+    	               wvustat/plot/**, wvustat/statistics/**,  
+    	               wvustat/swing/**, wvustat/table/**, 
+    	               wvustat/util/**, wvustat/network/**, wvustat/contentviewer/** ">
+      <manifest>
+        <attribute name="Main-Class" value="wvustat.table.Launcher"/>
+      </manifest>
+    </jar>
+  </target>
+	
+  <target name="Book" depends="compile">
+	<jar basedir="${dest}" destfile="Book.jar"
+	    includes="contents/**" />
+  </target>	
+
+</project>

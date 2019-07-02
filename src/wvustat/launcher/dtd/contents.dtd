@@ -1,0 +1,9 @@
+<!ELEMENT contents (title, javaStatTool?, node*)>
+<!ELEMENT node (title, javaStatTool?, node*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT javaStatTool (toolName, paramList?)>
+<!ELEMENT toolName (#PCDATA)>
+<!ELEMENT paramList (param+)>
+<!ELEMENT param (name, value)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT value (#PCDATA)>

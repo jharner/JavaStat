@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!DOCTYPE myJavaStat SYSTEM "http://stat.wvu.edu/myJavaStat/dtd/config.dtd">
+
+<myJavaStat>
+  <serverURL>http://ideal.stat.wvu.edu:8080/ideal/userAuthentication.do</serverURL>
+  <module>
+    <name>Sampling</name>
+    <type>StatTool</type>
+    <class>wvustat.launcher.adaptors.SamplerAdaptor</class>
+  </module>
+  <module>
+    <name>Central Limit Theorem</name>
+    <type>StatTool</type>
+    <class>wvustat.launcher.adaptors.CtrLimitAdaptor</class>
+  </module>
+  <module>
+    <name>Power</name>
+    <type>StatTool</type>
+    <class>wvustat.launcher.adaptors.PowerAdaptor</class>
+  </module>
+  <module>
+    <name>Confidence Interval</name>
+    <type>StatTool</type>
+    <class>wvustat.launcher.adaptors.ConfintAdaptor</class>
+  </module>
+  <module>
+    <name>Data</name>
+    <type>StatTool</type>
+    <class>wvustat.table.ExampleDataPanel</class>
+  </module>
+  <module>
+    <name>Correlation Coefficient Test</name>
+    <type>StatTool</type>
+    <class>wvustat.simulation.correlation.Testcorrcoeff</class>
+  </module>
+  <module>
+    <name>Grapher</name>
+    <type>StatTool</type>
+    <class>wvustat.math.UI.Grapher</class>
+  </module>
+  <module>
+    <name>Relative Frequency</name>
+    <type>StatTool</type>
+    <class>wvustat.simulation.relfreq.RelFreq</class>
+  </module>
+  <module>
+    <name>Box Model</name>
+    <type>StatTool</type>
+    <class>wvustat.simulation.boxmodel.BoxModelPanel</class>
+  </module>
+  <module>
+    <name>Five Step</name>
+    <type>StatTool</type>
+    <class>wvustat.simulation.fivestep.FiveStep</class>
+  </module>
+  <module>
+    <name>Poker</name>
+    <type>StatTool</type>
+    <class>wvustat.simulation.poker.Poker</class>
+  </module>
+  <module>
+    <name>Discrete Distribution</name>
+    <type>StatTool</type>
+    <class>wvustat.launcher.adaptors.DiscreteDistAdaptor</class>
+  </module>
+  <module>
+    <name>Continuous Distribution</name>
+    <type>StatTool</type>
+    <class>wvustat.launcher.adaptors.ContinuousDistAdaptor</class>
+  </module>
+  <module>
+    <name>Chi Square</name>
+    <type>StatTool</type>
+    <class>wvustat.simulation.chisquare.ChiSquare</class>
+  </module>
+  <module>
+    <name>HTML Viewer</name>
+    <type>Helper</type>
+    <class>wvustat.contentviewer.HTMLViewer</class>
+  </module>
+  <module>
+    <name>PDF Viewer</name>
+    <type>StatTool</type>
+    <class>wvustat.contentviewer.BrowserLaunch</class>
+  </module>
+  <module>
+    <name>Examples</name>
+    <type>StatTool</type>
+    <class>wvustat.table.ExamplePanel</class>
+  </module>
+</myJavaStat>

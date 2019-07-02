@@ -1,0 +1,1041 @@
+<?xml version="1.0"?>
+<!DOCTYPE contents SYSTEM "http://stat.wvu.edu/myJavaStat/dtd/contents.dtd">
+
+<contents>
+  <title>LifeStats</title>
+  <javaStatTool>
+    <toolName>PDF Viewer</toolName>
+    <paramList>
+      <param>
+        <name>content</name>
+        <value>/contents/fm.pdf</value>
+      </param>
+      <param>
+        <name>auth</name>
+        <value>false</value>
+      </param>
+    </paramList>
+  </javaStatTool>
+  
+  <node>
+    <title>Glossary</title>
+    <javaStatTool>
+      <toolName>PDF Viewer</toolName>
+      <paramList>
+        <param>
+          <name>content</name>
+          <value>/contents/glossary.pdf</value>
+        </param>
+        <param>
+          <name>auth</name>
+          <value>false</value>
+        </param>
+      </paramList>
+    </javaStatTool>
+  </node>
+  
+  <node>
+    <title>Part I: Describing Data</title>
+    <node>
+      <title>Chapter 1 Describing Data</title>
+      <javaStatTool>
+        <toolName>PDF Viewer</toolName>
+        <paramList>
+          <param>
+            <name>content</name>
+            <value>/contents/chap01.pdf</value>
+          </param>
+          <param>
+            <name>auth</name>
+            <value>false</value>
+          </param>
+        </paramList>
+      </javaStatTool>
+    
+      <node>
+        <title>Notes</title>
+        <javaStatTool>
+          <toolName>PDF Viewer</toolName>
+          <paramList>
+            <param>
+              <name>content</name>
+              <value>/contents/Stat211Chap1.pdf</value>
+            </param>
+            <param>
+              <name>auth</name>
+              <value>false</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+    
+      <node>
+        <title>Data</title>
+        <javaStatTool>
+          <toolName>Data</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>1</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Examples</title>
+        <javaStatTool>
+          <toolName>Examples</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>1</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+    </node>
+
+    <node>
+      <title>Chapter 2 Summarizing Data</title>
+      <javaStatTool>
+        <toolName>PDF Viewer</toolName>
+        <paramList>
+          <param>
+            <name>content</name>
+            <value>/contents/chap02.pdf</value>
+          </param>
+          <param>
+            <name>auth</name>
+            <value>false</value>
+          </param>
+        </paramList>
+      </javaStatTool>
+      
+      <node>
+        <title>Notes</title>
+        <javaStatTool>
+          <toolName>PDF Viewer</toolName>
+          <paramList>
+            <param>
+              <name>content</name>
+              <value>/contents/Stat211Chap2.pdf</value>
+            </param>
+            <param>
+              <name>auth</name>
+              <value>false</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+      
+      <node>
+        <title>Data</title>
+        <javaStatTool>
+          <toolName>Data</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>2</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Examples</title>
+        <javaStatTool>
+          <toolName>Examples</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>2</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+    </node>
+
+    <node>
+      <title>Chapter 3 Linear Relationships</title>
+      <javaStatTool>
+        <toolName>PDF Viewer</toolName>
+        <paramList>
+          <param>
+            <name>content</name>
+            <value>/contents/chap03.pdf</value>
+          </param>
+          <param>
+            <name>auth</name>
+            <value>true</value>
+          </param>
+        </paramList>
+      </javaStatTool>
+      
+      <node>
+        <title>Notes</title>
+        <javaStatTool>
+          <toolName>PDF Viewer</toolName>
+          <paramList>
+            <param>
+              <name>content</name>
+              <value>/contents/Stat211Chap3.pdf</value>
+            </param>
+            <param>
+              <name>auth</name>
+              <value>false</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Data</title>
+        <javaStatTool>
+          <toolName>Data</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>3</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Correlation</title>
+        <javaStatTool>
+          <toolName>
+            Correlation Coefficient Test
+          </toolName>
+        </javaStatTool>
+      </node>
+<!--
+      <node>
+        <title>Grapher</title>
+        <javaStatTool>
+          <toolName>Grapher</toolName>
+        </javaStatTool>
+      </node>
+-->
+      <node>
+        <title>Examples</title>
+        <javaStatTool>
+          <toolName>Examples</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>3</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+    </node>
+  </node>
+
+  <node>
+    <title>Part II Probability Modeling</title>
+
+    <node>
+      <title>
+        Chapter 4 Probabilities &amp; Simulation
+      </title>
+      
+      <javaStatTool>
+        <toolName>PDF Viewer</toolName>
+        <paramList>
+          <param>
+            <name>content</name>
+            <value>/contents/chap04.pdf</value>
+          </param>
+          <param>
+            <name>auth</name>
+            <value>true</value>
+          </param>
+        </paramList>
+      </javaStatTool>
+      
+      <node>
+        <title>Notes</title>
+        <javaStatTool>
+          <toolName>PDF Viewer</toolName>
+          <paramList>
+            <param>
+              <name>content</name>
+              <value>/contents/Stat211Chap4.pdf</value>
+            </param>
+            <param>
+              <name>auth</name>
+              <value>false</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+      
+      <node>
+        <title>Probability Definition</title>
+        <javaStatTool>
+          <toolName>
+            Relative Frequency
+          </toolName>
+        </javaStatTool>
+      </node>
+      <node>
+        <title>Box Model</title>
+
+        <javaStatTool>
+          <toolName>
+            Box Model
+          </toolName>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Five-step Method</title>
+
+        <javaStatTool>
+          <toolName>
+            Five Step
+          </toolName>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Poker</title>
+
+        <javaStatTool>
+          <toolName>
+            Poker
+          </toolName>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Examples</title>
+        <javaStatTool>
+          <toolName>Examples</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>4</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+    </node>
+
+    <node>
+      <title>Chapter 5 Expected Value &amp; Simulation</title>
+      
+      <javaStatTool>
+        <toolName>PDF Viewer</toolName>
+        <paramList>
+          <param>
+            <name>content</name>
+            <value>/contents/chap05.pdf</value>
+          </param>
+          <param>
+            <name>auth</name>
+            <value>true</value>
+          </param>
+        </paramList>
+      </javaStatTool>
+      
+      <node>
+        <title>Notes</title>
+        <javaStatTool>
+          <toolName>PDF Viewer</toolName>
+          <paramList>
+            <param>
+              <name>content</name>
+              <value>/contents/Stat211Chap5.pdf</value>
+            </param>
+            <param>
+              <name>auth</name>
+              <value>false</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Five-step Method</title>
+
+        <javaStatTool>
+          <toolName>
+            Five Step
+          </toolName>
+        </javaStatTool>
+      </node>
+    </node>
+
+    <node>
+      <title>Chapter 6 Probability Distributions</title>
+      
+      <javaStatTool>
+        <toolName>PDF Viewer</toolName>
+        <paramList>
+          <param>
+            <name>content</name>
+            <value>/contents/chap06.pdf</value>
+          </param>
+          <param>
+            <name>auth</name>
+            <value>true</value>
+          </param>
+        </paramList>
+      </javaStatTool>
+      
+      <node>
+        <title>Notes</title>
+        <javaStatTool>
+          <toolName>PDF Viewer</toolName>
+          <paramList>
+            <param>
+              <name>content</name>
+              <value>/contents/Stat211Chap6.pdf</value>
+            </param>
+            <param>
+              <name>auth</name>
+              <value>false</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+      
+      <node>
+        <title>Binomial Distribution</title>
+        <javaStatTool>
+          <toolName>Discrete Distribution</toolName>
+          <paramList>
+            <param>
+              <name>DistributionName</name>
+              <value>Binomial</value>
+            </param>
+            <param>
+              <name>n</name>
+              <value>40</value>
+            </param>
+            <param>
+              <name>p</name>
+              <value>0.5</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+      <node>
+        <title>Poisson Distribution</title>
+        <javaStatTool>
+          <toolName>Discrete Distribution</toolName>
+          <paramList>
+            <param>
+              <name>DistributionName</name>
+              <value>Poisson</value>
+            </param>
+            <param>
+              <name>m</name>
+              <value>6.0</value>
+            </param>
+            <param>
+              <name>q</name>
+              <value>3.0</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+      <node>
+        <title>Normal Distribution</title>
+        <javaStatTool>
+          <toolName>Continuous Distribution</toolName>
+          <paramList>
+            <param>
+              <name>DistributionName</name>
+              <value>Normal</value>
+            </param>
+            <param>
+              <name>mu</name>
+              <value>1.0</value>
+            </param>
+            <param>
+              <name>sd</name>
+              <value>2.0</value>
+            </param>
+            <param>
+              <name>display</name>
+              <value>PDF</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+      <node>
+        <title>Normal Approximations</title>
+        <javaStatTool>
+          <toolName>Discrete Distribution</toolName>
+          <paramList>
+            <param>
+              <name>DistributionName</name>
+              <value>Binomial</value>
+            </param>
+            <param>
+              <name>n</name>
+              <value>20</value>
+            </param>
+            <param>
+              <name>p</name>
+              <value>0.5</value>
+            </param>
+            <param>
+              <name>ApproxDistribution</name>
+              <value>Normal</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+      <node>
+        <title>Examples</title>
+        <javaStatTool>
+          <toolName>Examples</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>6</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+    </node>
+
+    <node>
+      <title>Chapter 7 Obtaining Data</title>
+      <javaStatTool>
+        <toolName>PDF Viewer</toolName>
+        <paramList>
+          <param>
+            <name>content</name>
+            <value>/contents/chap07.pdf</value>
+          </param>
+          <param>
+            <name>auth</name>
+            <value>true</value>
+          </param>
+        </paramList>
+      </javaStatTool>
+      
+      <node>
+        <title>Notes</title>
+        <javaStatTool>
+          <toolName>PDF Viewer</toolName>
+          <paramList>
+            <param>
+              <name>content</name>
+              <value>/contents/Stat211Chap7.pdf</value>
+            </param>
+            <param>
+              <name>auth</name>
+              <value>false</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+      
+      <node>
+        <title>Sampling</title>
+        <javaStatTool>
+          <toolName>Sampling</toolName>
+          <paramList>
+            <param>
+              <name>populationSize</name>
+              <value>145</value>
+            </param>
+            <param>
+              <name>sampleSize</name>
+              <value>20</value>
+            </param>
+            <param>
+              <name>pRed</name>
+              <value>0.3</value>
+            </param>
+            <param>
+              <name>withReplacement</name>
+              <value>false</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+    </node>
+
+  </node>
+  <node>
+    <title>Part III Statistical Inferences</title>
+
+    <node>
+      <title>Chapter 8 Confidence Interval Estimation</title>
+      <javaStatTool>
+        <toolName>PDF Viewer</toolName>
+        <paramList>
+          <param>
+            <name>content</name>
+            <value>/contents/chap08.pdf</value>
+          </param>
+          <param>
+            <name>auth</name>
+            <value>true</value>
+          </param>
+        </paramList>
+      </javaStatTool>
+      
+      <node>
+        <title>Notes</title>
+        <javaStatTool>
+          <toolName>PDF Viewer</toolName>
+          <paramList>
+            <param>
+              <name>content</name>
+              <value>/contents/Stat211Chap8.pdf</value>
+            </param>
+            <param>
+              <name>auth</name>
+              <value>false</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+      
+      <node>
+        <title>Data</title>
+        <javaStatTool>
+          <toolName>Data</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>8</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Central Limit Theorem</title>
+        <javaStatTool>
+          <toolName>Central Limit Theorem</toolName>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Confidence Interval</title>
+        <javaStatTool>
+          <toolName>Confidence Interval</toolName>
+        </javaStatTool>
+      </node>
+      
+      <node>
+        <title>Examples</title>
+        <javaStatTool>
+          <toolName>Examples</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>8</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+    </node>
+
+    <node>
+      <title>Chapter 9 Introduction to Hypothesis Testing</title>
+      <javaStatTool>
+        <toolName>PDF Viewer</toolName>
+        <paramList>
+          <param>
+            <name>content</name>
+            <value>/contents/chap09.pdf</value>
+          </param>
+          <param>
+            <name>auth</name>
+            <value>true</value>
+          </param>
+        </paramList>
+      </javaStatTool>
+      
+      <node>
+        <title>Notes</title>
+        <javaStatTool>
+          <toolName>PDF Viewer</toolName>
+          <paramList>
+            <param>
+              <name>content</name>
+              <value>/contents/Stat211Chap9.pdf</value>
+            </param>
+            <param>
+              <name>auth</name>
+              <value>false</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+      
+      <node>
+        <title>Data</title>
+        <javaStatTool>
+          <toolName>Data</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>9</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Power</title>
+        <javaStatTool>
+          <toolName>Power</toolName>
+          <paramList>
+            <param>
+              <name>Alpha</name>
+              <value>0.2</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Examples</title>
+        <javaStatTool>
+          <toolName>Examples</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>9</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+    </node>
+
+	<node>
+      <title>Chapter 10 Estimating with Confidence</title>
+      <javaStatTool>
+        <toolName>PDF Viewer</toolName>
+        <paramList>
+          <param>
+            <name>content</name>
+            <value>/contents/chap10.pdf</value>
+          </param>
+          <param>
+            <name>auth</name>
+            <value>true</value>
+          </param>
+        </paramList>
+      </javaStatTool>
+      
+      <node>
+        <title>Notes</title>
+        <javaStatTool>
+          <toolName>PDF Viewer</toolName>
+          <paramList>
+            <param>
+              <name>content</name>
+              <value>/contents/Stat211Chap8.pdf</value>
+            </param>
+            <param>
+              <name>auth</name>
+              <value>false</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+      
+      <node>
+        <title>Data</title>
+        <javaStatTool>
+          <toolName>Data</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>10</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Central Limit Theorem</title>
+        <javaStatTool>
+          <toolName>Central Limit Theorem</toolName>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Confidence Interval</title>
+        <javaStatTool>
+          <toolName>Confidence Interval</toolName>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Examples</title>
+        <javaStatTool>
+          <toolName>Examples</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>10</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+    </node>
+
+	<node>
+      <title>Chapter 11 Hypothesis Testing</title>
+      <javaStatTool>
+        <toolName>PDF Viewer</toolName>
+        <paramList>
+          <param>
+            <name>content</name>
+            <value>/contents/chap11.pdf</value>
+          </param>
+          <param>
+            <name>auth</name>
+            <value>true</value>
+          </param>
+        </paramList>
+      </javaStatTool>
+      
+      <node>
+        <title>Notes</title>
+        <javaStatTool>
+          <toolName>PDF Viewer</toolName>
+          <paramList>
+            <param>
+              <name>content</name>
+              <value>/contents/Stat211Chap9.pdf</value>
+            </param>
+            <param>
+              <name>auth</name>
+              <value>false</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+      
+      <node>
+        <title>Data</title>
+        <javaStatTool>
+          <toolName>Data</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>11</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Power</title>
+        <javaStatTool>
+          <toolName>Power</toolName>
+          <paramList>
+            <param>
+              <name>Alpha</name>
+              <value>0.2</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Examples</title>
+        <javaStatTool>
+          <toolName>Examples</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>11</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+    </node>
+
+    <node>
+      <title>Chapter 12 Chi-Square Testing</title>
+      <javaStatTool>
+        <toolName>PDF Viewer</toolName>
+        <paramList>
+          <param>
+            <name>content</name>
+            <value>/contents/chap12.pdf</value>
+          </param>
+          <param>
+            <name>auth</name>
+            <value>true</value>
+          </param>
+        </paramList>
+      </javaStatTool>
+      
+      <node>
+        <title>Notes</title>
+        <javaStatTool>
+          <toolName>PDF Viewer</toolName>
+          <paramList>
+            <param>
+              <name>content</name>
+              <value>/contents/Stat211Chap10.pdf</value>
+            </param>
+            <param>
+              <name>auth</name>
+              <value>false</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+      
+      
+      <node>
+        <title>Data</title>
+        <javaStatTool>
+          <toolName>Data</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>12</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Chi Square</title>
+        <javaStatTool>
+          <toolName>Chi Square</toolName>
+        </javaStatTool>
+      </node>
+
+      <node>
+        <title>Examples</title>
+        <javaStatTool>
+          <toolName>Examples</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>12</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+    </node>  
+  
+    <node>
+      <title>Chapter 13 Regression</title>
+      <javaStatTool>
+        <toolName>PDF Viewer</toolName>
+        <paramList>
+          <param>
+            <name>content</name>
+            <value>/contents/chap13.pdf</value>
+          </param>
+          <param>
+            <name>auth</name>
+            <value>true</value>
+          </param>
+        </paramList>
+      </javaStatTool>
+      
+      <node>
+        <title>Notes</title>
+        <javaStatTool>
+          <toolName>PDF Viewer</toolName>
+          <paramList>
+            <param>
+              <name>content</name>
+              <value>/contents/Stat211Chap11.pdf</value>
+            </param>
+            <param>
+              <name>auth</name>
+              <value>false</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+      
+      <node>
+        <title>Data</title>
+        <javaStatTool>
+          <toolName>Data</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>13</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+<!--      
+      <node>
+        <title>Experimental stuff - I</title>
+        <javaStatTool>
+          <toolName>HTML Viewer</toolName>
+          <paramList>
+            <param>
+              <name>content</name>
+              <value>/contents/test.html</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+-->
+      <node>
+        <title>Examples</title>
+        <javaStatTool>
+          <toolName>Examples</toolName>
+          <paramList>
+            <param>
+              <name>id</name>
+              <value>13</value>
+            </param>
+          </paramList>
+        </javaStatTool>
+      </node>
+    </node>
+  </node>
+  
+  <node>
+    <title>Appendix</title>
+    <javaStatTool>
+      <toolName>PDF Viewer</toolName>
+      <paramList>
+        <param>
+          <name>content</name>
+          <value>/contents/appendices.pdf</value>
+        </param>
+        <param>
+          <name>auth</name>
+          <value>false</value>
+        </param>
+      </paramList>
+    </javaStatTool>
+  </node>
+  
+  <node>
+    <title>Index</title>
+    <javaStatTool>
+      <toolName>PDF Viewer</toolName>
+      <paramList>
+        <param>
+          <name>content</name>
+          <value>/contents/index.pdf</value>
+        </param>
+        <param>
+          <name>auth</name>
+          <value>false</value>
+        </param>
+      </paramList>
+    </javaStatTool>
+  </node>
+
+</contents>

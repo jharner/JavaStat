@@ -1,0 +1,52 @@
+package wvustat.simulation.discretedist;
+
+import java.awt.*;
+
+public class PlotCoord {
+
+  double xstretch = 1.0;
+  double ystretch = 1.0;
+  double ywholeScreen;
+  Insets inset;             /* How far from the edge the display is */
+  int xmin;
+
+  PlotCoord(int xmax, double ymax, int xmin, double ymin,
+            int width, int height, Insets insetin ) {
+
+    inset = insetin;
+
+    xstretch = ( width - insetin.left - insetin.right ) / ( (xmax - xmin) * 1.0 );
+    ystretch = ( height - insetin.top - insetin.bottom ) / (ymax - ymin);
+
+    ywholeScreen = ymax - ymin;
+    
+    this.xmin = xmin;
+
+  }
+
+  /* Return the X and Y coordinates on the canvas. */
+
+  int ycoord(double y) {
+    double ycoorddouble;
+
+    ycoorddouble = (ywholeScreen - y ) * ystretch + inset.top;
+    return(Math.max((int)(Math.round(ycoorddouble)), inset.top));
+  }
+
+  int xcoord(int x) {
+
+    int xcoordint;
+
+    xcoordint = (int)( 1.0 * ( x - xmin ) * xstretch ) + inset.left;
+    return(xcoordint);
+  }
+
+  int xcoord(double x) {
+
+    int xcoordint;
+
+    xcoordint = (int)( 1.0 * ( x - xmin ) * xstretch ) + inset.left;
+    return(xcoordint);
+  }
+
+}

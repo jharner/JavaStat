@@ -1,0 +1,70 @@
+10
+
+dir
+791
+svn+ssh://dajieluo@svn.stat.wvu.edu/www/repos/stat/trunk/JavaStat/myJavaStat/src/wvustat/simulation
+svn+ssh://dajieluo@svn.stat.wvu.edu/www/repos/stat
+
+
+
+2012-03-26T20:08:56.787570Z
+562
+dajieluo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+351ec4b2-fdd5-4e14-980d-f2db10344570
+
+confint
+dir
+
+model
+dir
+
+poker
+dir
+
+relfreq
+dir
+
+correlation
+dir
+
+launcher
+dir
+
+chisquare
+dir
+
+fivestep
+dir
+
+discretedist
+dir
+
+centrallimit
+dir
+
+boxmodel
+dir
+
+continuousdist
+dir
+
+sampling
+dir
+
+power
+dir
+

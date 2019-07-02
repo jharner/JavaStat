@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Test Page</title>
+</head>
+<body>
+  <h1>Test Page</h1>
+  <p/>
+  <i>
+    This page is used to test ingegrating HTML content into myJavaStat.
+  </i>
+  <p/>
+  <ul>
+    <li><b>Subscribes:</b> x<sub><small>2</small></sub>
+    <li><b>Superscribes:</b> y<sup><small>3</small></sup>
+    <li><a href="./test2.html">A link to another local file</a>
+    <li><a href="http://ideal.stat.wvu.edu/ideal/jsp/modules/VarTypes/vartypes.jsp">
+      A link to an IDEAL module</a>
+    <li><a href="http://www.google.com">A link to google</a>
+  </ul>
+</body>
+</html>

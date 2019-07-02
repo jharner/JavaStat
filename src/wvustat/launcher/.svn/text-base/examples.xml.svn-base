@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<LifeStats>
+  <example>
+    <name>New Jersy County Areas</name>
+    <file>http://ideal.stat.wvu.edu:8080/ideal/resource/examples/areas.html</file>
+    <subject>Geography,Miscellaneous</subject>
+    <module>Histograms,Moments</module>
+    <description><![CDATA[You can put your description here. <br>HTML is supported.<br>Do not put hard return here.]]></description>
+  </example>
+</LifeStats>

@@ -1,0 +1,391 @@
+options{
+    MULTI = true;
+    STATIC = false;
+    NODE_DEFAULT_VOID = true;
+}
+
+PARSER_BEGIN(ExpressionParser)
+package wvustat.math.expression;
+
+import java.io.*;
+import java.util.*;
+
+public class ExpressionParser{
+    public ExpressionParser(){
+        this(new StringReader(""));
+    }
+    
+  	private static String compact(String str)
+  	{
+  		StringBuffer buf = new StringBuffer(str.length());
+  		for (int i = 0; i < str.length(); i++)
+  		{
+  			if (str.charAt(i) != ' ' && str.charAt(i) != '\t' && str.charAt(i) != '\n' && str.charAt(i) != '\r')
+  			{
+  				buf.append(str.charAt(i));
+  			}
+  		}
+
+  		return buf.toString();
+  	}
+  	
+  	private static String fillAsterisk(String str) throws ParseException
+  	{
+  		StringBuffer buf = new StringBuffer(str.length());
+  		StringTokenizer st = new StringTokenizer(compact(str), "+-*/^&|!=<>(),", true);
+  		
+  		String lastToken = "";
+  		if(st.hasMoreTokens()){ 
+  			lastToken = st.nextToken();
+  			buf.append(isComposite(lastToken)? composite(lastToken): lastToken);
+  		}
+  		
+  		
+  		while (st.hasMoreTokens())
+        {
+            String token = st.nextToken();
+            if (	(isNumber(lastToken,false) && "(".equals(token)) ||
+            		(")".equals(lastToken) && (isNumber(token,true) || isComposite(token)) ) || 
+				(")".equals(lastToken) && "(".equals(token)) ||
+            	  	(")".equals(lastToken) && isIdentifier(token)) )
+            {
+            		buf.append("*");
+            }
+            
+            if ( isIdentifier(lastToken) && "(".equals(token))
+            {
+            		if (FuncImplementation.getInstance(lastToken) == null)
+            			throw new ParseException("Unsupported function: " + lastToken);
+            }
+            
+            buf.append(isComposite(token)? composite(token): token);
+            lastToken = token;
+        }
+  		
+  		return buf.toString();
+  	}
+  	
+  	private static boolean isNumber(String s, boolean endwithE){
+  		try{
+  			if (endwithE && (s.charAt(s.length()-1) == 'e' || s.charAt(s.length()-1) == 'E'))
+  				Double.parseDouble(s.substring(0, s.length()-1));
+  			else
+  				Double.parseDouble(s);
+  		}catch(NumberFormatException ex){
+  			return false;
+  		}
+  		
+  		return true;
+  	}
+  	
+  	private static boolean isComposite(String s){
+  		if(isNumber(s, true)) return false;
+  		
+  		boolean ret = false;
+  		int i = s.length() - 1;
+  		while (!ret && i >= 1){
+  			String numPart = s.substring(0, i);
+  			String varPart = s.substring(i);
+  			if (isNumber(numPart, false) && isIdentifier(varPart) && !varPart.equalsIgnoreCase("e")) 
+  				ret = true;
+  			i--;
+  		}
+  		return ret;
+  	}
+  	
+  	private static String extractNumber(String s){
+  		int i = s.length() - 1;
+  		while (i >= 1){
+  			String numPart = s.substring(0, i);
+  			String varPart = s.substring(i);
+  			if (isNumber(numPart, false) && isIdentifier(varPart) && !varPart.equalsIgnoreCase("e")) 
+  				return numPart;
+  			i--;
+  		}
+  		return "";
+  	}
+  	
+  	private static String composite(String s){
+  		String numPart = extractNumber(s);
+  		String varPart = s.substring(numPart.length());
+  		return numPart + "*" + varPart;  		
+  	}
+  	
+  	private static boolean isIdentifier(String s){
+  		if ( s.charAt(0) != '_' && !Character.isLetter(s.charAt(0)) )
+  			return false;
+  		
+  		boolean ret = true;
+  		int i = 1;
+  		while (ret && i < s.length()){
+  			if ( s.charAt(i) != '_' && !Character.isLetterOrDigit(s.charAt(i)) )
+  				ret = false;
+  			i++;
+  		}
+  		return ret;
+  	}
+  
+    public Expression parse(String exp) throws ParseException{
+        ReInit(new StringReader(fillAsterisk(fillAsterisk(exp))));
+        return start();
+    }
+
+    public static void main(String args[]){
+        System.out.println("Expression Parser test. Please enter " +
+                           "expressions (one per line):");
+        System.out.println("Enter EXIT to quit the program.");
+        System.out.print(">");
+
+        try{
+            BufferedReader reader =
+                new BufferedReader(new InputStreamReader(System.in));
+            ExpressionParser ep = new ExpressionParser();
+            String s = null;
+            while((s = reader.readLine()) != null){
+                if(s.equals("EXIT"))
+                    break;
+                try{
+                	   System.out.println("fill asterisk: " + fillAsterisk(s));
+                    Expression exp = ep.parse(s);
+                    System.out.println("Parsed expression: " + exp.toString());
+
+                    System.out.println("Variables:");
+                    Map varMap = exp.getVariables();
+                    Iterator it = varMap.keySet().iterator();
+                    while(it.hasNext()){
+                        String v = (String)it.next();
+                        System.out.println("Variable name: " + v);
+                    }
+                    Vector v = exp.getVariableNames();
+                    Map map=new HashMap();
+                    for(int i=0; i<v.size(); i++){
+                    	   System.out.println("Variable name: " + v.elementAt(i));
+                    	   map.put(v.elementAt(i), new Double(1.0));
+                    }
+                    
+                    exp.setVariables(map);
+                    System.out.println("Value: " + exp.getValue());
+                    System.out.println("derivative: " + exp.derivativeString("x") );
+                    Expression derivExp;
+                    System.out.println("derivative: " + (derivExp = ep.parse(exp.derivativeString("x"))) );
+                    System.out.println("derivative value: " + derivExp.value(map));
+                }catch(Exception e){
+                    System.out.println(e.toString());
+                }catch(Error err){
+                	   System.out.println(err.toString());
+                }
+
+                System.out.print(">");
+            }
+            System.out.println("\nBye.");
+        }catch(Exception e){
+            System.out.println("Exception: " + e);
+        }
+    }
+}
+
+PARSER_END(ExpressionParser)
+
+SKIP : {
+    " " | "\t" | "\n" | "\r"
+}
+
+TOKEN : {
+   <NUM_LITERAL : (["0" - "9"])+ 
+       | (["0"-"9"])+ "." (["0"-"9"])* (<EXPONENT>)?
+       | "." (["0"-"9"])+ (<EXPONENT>)?
+       | (["0"-"9"])+ <EXPONENT>>
+   |<BOOL_LITERAL : ("true" | "false")>
+   |<#EXPONENT : ["e", "E"] (["+", "-"])?(["0"-"9"])+>
+   |<STRING_LITERAL:
+      "\""
+      (   (~["\"","\\","\n","\r"])
+        | ("\\"
+            ( ["n","t","b","r","f","\\","'","\""]
+            )
+          )
+      )*
+      "\""
+    >
+}
+
+TOKEN : {
+    <IDENTIFIER : <LETTER> (<LETTER>|<DIGIT>)*>
+   |<#LETTER : ["_", "A"-"Z", "a"-"z"]>
+   |<#DIGIT : ["0"-"9"]>
+}
+
+TOKEN : {
+    <GT : ">"> | <LT : "<"> | <EQ : "=="> | <GE : ">="> | <LE : "<="> | 
+    <NE : "!="> | <AND : "&&"> | <OR : "||"> | <NOT : "!"> | <PLUS : "+"> | 
+    <MINUS : "-"> | <MUL : "*"> | <DIV : "/"> | <POWER : "^">
+}
+
+Expression start() :
+{}
+{
+    expression() <EOF> { return (Expression)jjtree.popNode(); }
+   |<EOF> { throw new ParseException("Empty expression"); }
+}
+
+void expression() :
+{}
+{
+    orExpression()
+}
+
+void orExpression() :
+{
+    Token op;
+}
+{
+ andExpression() (( (op = <OR>) andExpression(){
+     jjtThis.setOperator(op.image);
+ }) #LogicalExp(2))*
+}
+
+void andExpression() :
+{
+    Token op;
+}
+{
+    relationalExpression() (( (op = <AND>) relationalExpression(){
+        jjtThis.setOperator(op.image);
+    }) #LogicalExp(2))*
+}
+
+void relationalExpression() :
+{
+    Token op;
+}
+{
+    addictiveExpression() (
+        ( (op = <GT> | op = <LT> | op = <EQ> | op= <GE> | op = <LE> | 
+           op = <NE>) 
+          addictiveExpression(){
+              jjtThis.setOperator(op.image);
+        }) #ComparisonExp(2)
+    )*
+}
+
+void addictiveExpression() :
+{
+    Token op;
+}
+{
+    multiplicativeExpression() (
+        ((op = <PLUS> | op = <MINUS>) multiplicativeExpression(){
+            jjtThis.setOperator(op.image);
+        }) #AddictiveExp(2)
+    )*
+}
+
+void multiplicativeExpression() :
+{
+    Token op;
+}
+{
+    unaryExpression() (
+        ((op = <MUL> | op = <DIV>) unaryExpression(){
+            jjtThis.setOperator(op.image);
+        }) #MultiplicativeExp(2)
+    )*
+}
+
+void unaryExpression() :
+{
+    Token op;
+}
+{
+    ( (op = <PLUS> | op = <MINUS> | op = <NOT>) exponentialExpression()
+    {
+        jjtThis.setOperator(op.image);
+    }) #UnaryExp(1)
+   | (exponentialExpression())
+}
+
+void exponentialExpression() :
+{
+    Token op;
+}
+{
+    notPlusMinusUnaryExpression() (
+        (op = <POWER> unaryExpression()) #ExponentialExp(2)
+    )?
+}
+
+void notPlusMinusUnaryExpression() :
+{}
+{
+     constant()
+   | LOOKAHEAD(<IDENTIFIER> "(")
+     function()
+   | ( "(" expression() ")" )
+   | variable()
+}
+
+void constant() :
+{
+    Token t;
+}
+{
+   ((t = <NUM_LITERAL>){
+        jjtThis.setInitValue(new Double(t.image));
+    }) #LiteralExp(0)
+   |((t = <BOOL_LITERAL>){
+        jjtThis.setInitValue(new Boolean(t.image));
+    }) #LiteralExp(0)
+   |((t = <STRING_LITERAL>){
+        jjtThis.setInitValue(t.image.substring(1, t.image.length()-1));
+    }) #LiteralExp(0)
+}
+
+void function() :
+{
+    String funcName;
+    int numOfArg = 0;
+}
+{
+    ( funcName = identifier()
+      {
+          jjtThis.setFunctionName(funcName);
+      }
+      "(" numOfArg = argumentList() ")"
+    ) #FuncExp(numOfArg)
+}
+
+int argumentList() :
+{
+    int numOfArg = 0;
+}
+{
+    (
+        expression() { numOfArg++; } 
+        ("," expression() { numOfArg++; })*
+    )?
+    {
+        return numOfArg;
+    } ")"
+}
+
+void variable() :
+{
+    String varName;
+}
+{
+    (varName = identifier()
+     {
+         jjtThis.setVarName(varName);
+     }) #Variable(0)
+}
+
+String identifier() :
+{
+    Token t;
+}
+{
+    t = <IDENTIFIER>
+    {
+        return t.image;
+    }
+}

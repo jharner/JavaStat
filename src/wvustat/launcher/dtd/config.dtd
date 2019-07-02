@@ -1,0 +1,6 @@
+<!ELEMENT myJavaStat (serverURL?, module+)>
+<!ELEMENT serverURL (#PCDATA)>
+<!ELEMENT module (name, type, class)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT class (#PCDATA)>

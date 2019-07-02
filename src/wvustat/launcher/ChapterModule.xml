@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<LifeStats>
+  <chapter id="1">
+    <module>VarTypes</module>
+    <module>Charts</module>
+    <module>Histograms</module>
+  </chapter>
+  <chapter id="2">
+    <module>Moments</module>
+    <module>Quantiles</module>
+  </chapter>
+  <chapter id="3">
+    <module>Correlation</module>
+    <module>Regression</module>
+  </chapter>
+  <chapter id="4">
+    <module>ProbDef</module>
+    <module>ProbLaw</module>
+    <module>ProbSimulation</module>
+  </chapter>
+  <chapter id="5">
+    <module>ExpValue</module>
+  </chapter>
+  <chapter id="6">
+    <module>Binomial</module>
+    <module>Poisson</module>
+    <module>Normal</module>
+    <module>NormalApprox</module>
+    <module>NormalPlot</module>
+  </chapter>
+  <chapter id="7">
+  </chapter>
+  <chapter id="8">
+    <module>CLT</module>
+    <module>CI</module>
+    <module>CI_mu</module>
+    <module>CI_mu1_mu2</module>
+    <module>CI_mu_d</module>
+    <module>CI_p</module>
+    <module>CI_p1_p2</module>
+  </chapter>
+  <chapter id="9">
+    <module>HypTest</module>
+    <module>HypTest_mu</module>
+    <module>HypTest_mu1_mu2</module>
+    <module>HypTest_mu_d</module>
+    <module>HypTest_p</module>
+    <module>HypTest_p1_p2</module>
+  </chapter>
+  <chapter id="10">
+    <module>CLT</module>
+    <module>CI</module>
+    <module>CI_mu</module>
+    <module>CI_mu1_mu2</module>
+    <module>CI_mu_d</module>
+    <module>CI_p</module>
+    <module>CI_p1_p2</module>
+  </chapter>
+  <chapter id="11">
+    <module>HypTest</module>
+    <module>HypTest_mu</module>
+    <module>HypTest_mu1_mu2</module>
+    <module>HypTest_mu_d</module>
+    <module>HypTest_p</module>
+    <module>HypTest_p1_p2</module>
+  </chapter>
+  <chapter id="12">
+  	<module>Charts</module>
+    <module>Cont_Tables</module>
+  </chapter>
+  <chapter id="13">
+  	<module>Correlation</module>
+    <module>Regression</module>
+  </chapter>
+</LifeStats>
